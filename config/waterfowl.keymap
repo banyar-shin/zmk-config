@@ -32,7 +32,7 @@
                 &kp Q       &kp W       &kp E       &kp R       &kp T            &kp Y       &kp U       &kp I         &kp O         &kp P
                 &kp A       &kp S       &kp D       &kp F       &kp G            &kp H       &kp J       &kp K         &kp L         &kp APOS
                 &mt LSHFT Z &kp X       &kp C       &kp V       &kp B            &kp N       &kp M       &kp COMMA     &kp DOT       &mt LSHFT FSLH
-                &mt LALT ESC  &kp LGUI  &mt LCTRL TAB            &kp RET          &lt 1 SPACE   &lt 2 BSPC
+                &kp N1      &mt LALT ESC  &kp LGUI  &mt LCTRL TAB   &kp N2       &kp N3      &kp RET     &lt 1 SPACE   &lt 2 BSPC    &kp N4
             >;
 
             sensor-bindings = <
@@ -62,7 +62,7 @@
                 &kp N1      &kp N2      &kp N3      &kp N4      &kp N5           &kp N6      &kp N7      &kp N8        &kp N9        &kp N0
                 &kp GRAVE   &kp HOME    &kp PG_UP   &kp PG_DN   &kp END          &kp LEFT    &kp DOWN    &kp UP        &kp RIGHT     &kp SEMI
                 &kp LSHFT   &trans      &trans      &trans      &trans           &kp UNDER   &kp MINUS   &kp EQUAL     &kp LBKT      &kp RBKT
-                &mt LALT ESC  &kp LGUI  &mt LCTRL TAB            &kp RET          &lt 1 SPACE   &lt 2 BSPC
+                &kp N1      &mt LALT ESC  &kp LGUI  &mt LCTRL TAB   &kp N2       &kp N3      &kp RET     &lt 1 SPACE   &lt 2 BSPC    &kp N4
             >;
 
             /* Optional: make the backslash a Shift-tap like in the picture’s \| key */
@@ -96,7 +96,7 @@
                 &kp F1      &kp F2      &kp F3      &kp F4      &kp F5           &kp F6      &kp F7      &kp F8        &kp F9        &kp F10
                 &kp F11     &kp F12     &kp C_PREV  &kp C_PLAY_PAUSE &kp C_NEXT   &kp C_MUTE  &kp C_VOL_DN &kp C_VOL_UP &kp C_BRI_DN  &kp C_BRI_UP
                 &trans      &trans      &trans      &trans      &trans           &trans      &trans      &trans        &trans        &trans
-                &mt LALT ESC  &kp LGUI  &mt LCTRL TAB            &kp RET          &lt 1 SPACE   &lt 2 BSPC
+                &kp N1      &mt LALT ESC  &kp LGUI  &mt LCTRL TAB   &kp N2       &kp N3      &kp RET     &lt 1 SPACE   &lt 2 BSPC    &kp N4
             >;
 
             sensor-bindings = <
