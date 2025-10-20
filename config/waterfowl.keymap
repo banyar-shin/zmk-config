@@ -13,30 +13,28 @@
         compatible = "zmk,keymap";
 
 /* Layer 0: Base keys
- *
- * ,-----.-----.-----.-----.-----.                      ,-----.-----.-----.-----.-----.
- * | Q   | W   | E   | R   | T   |                      | Y   | U   | I   | O   | P   |
- * |-----+-----+-----+-----+-----|                      |-----+-----+-----+-----+-----|
- * | A   | S   | D   | F   | G   |                      | H   | J   | K   | L   | ' " | 
- * |-----+-----+-----+-----+-----+                      |-----+-----+-----+-----+-----|
- * |SHF/Z| X   | C   | V   | B   |                      | N   | M   | < , | > . |SHF/?|
- * `-----'-----'-----'-----'-----'                      `-----'-----'-----'-----'-----'
- *               .-------.-------.-------.      .-------.-------.-------.   
- *               |OPT/ESC|  CMD  |CTR/TAB|      | ENTER |L1/SPC |L2/BSP |
- *               '-------'-------'-------'      '-------'-------'-------' 
- */
-
+ * ,----------------------------------.                    ,----------------------------------.
+ * |  Q   |  W   |  E   |  R   |  T   |                    |  Y   |  U   |  I   |  O   |  P   |
+ * |------+------+------+------+------|                    |------+------+------+------+------|
+ * |  A   |  S   |  D   |  F   |  G   |                    |  H   |  J   |  K   |  L   |  '"  |
+ * |------+------+------+------+------|  ,----.    ,----.  |------+------+------+------+------|
+ * |SHFT/Z|  X   |  C   |  V   |  B   |  |MUTE|    | L4 |  |  N   |  M   |  ,<  |  .>  |SHFT/?|
+ * `----------------------------------'  `----'    `----'  `----------------------------------'
+ *      ,----.   ,---------------------------.      ,---------------------------.   ,----.
+ *      |PREV|   |OPT/ESC | CMD/SPC | CTR/TAB|      |CAPS/RET | L1/SPC | L2/BSC |   |NEXT|
+ *      `----'   `---------------------------'      `---------------------------'   `----'
+*/
         default_layer {
             display-name = "Default Layer";
             bindings = <
-                &kp Q       &kp W       &kp E       &kp R       &kp T            &kp Y       &kp U       &kp I         &kp O         &kp P
-                &kp A       &kp S       &kp D       &kp F       &kp G            &kp H       &kp J       &kp K         &kp L         &kp APOS
-                &mt LSHFT Z &kp X       &kp C       &kp V       &kp B            &kp N       &kp M       &kp COMMA     &kp DOT       &mt LSHFT FSLH
-                &kp N1      &mt LALT ESC  &kp LGUI  &mt LCTRL TAB   &kp N2       &kp N3      &kp RET     &lt 1 SPACE   &lt 2 BSPC    &kp N4
+                &kp Q       &kp W           &kp E           &kp R           &kp T       &kp Y   &kp U           &kp I           &kp O         &kp P
+                &kp A       &kp S           &kp D           &kp F           &kp G       &kp H   &kp J           &kp K           &kp L         &kp APOS
+                &mt LSHFT Z &kp X           &kp C           &kp V           &kp B       &kp N   &kp M           &kp COMMA       &kp DOT       &mt LSHFT FSLH
+                &kp C_PREV  &mt LALT ESC    &mt LGUI SPACE  &mt LCTRL TAB   &kp C_MUTE  &lt 4   &mt CAPS RET    &lt 1 SPACE     &lt 2 BSPC    &kp C_NEXT
             >;
 
             sensor-bindings = <
-                &inc_dec_kp PAGE_DOWN PAGE_UP
+                &inc_dec_kp BSPC DEL
                 &inc_dec_kp C_VOL_DN C_VOL_UP
                 &inc_dec_kp DOWN UP
                 &inc_dec_kp LEFT RIGHT
@@ -44,33 +42,28 @@
         };
 
 /* Layer 1: Symbols
- * ,-----.-----.-----.-----.-----.                      ,-----.-----.-----.-----.-----.
- * | 1!  | 2@  | 3#  | 4$  | 5%  |                      | 6^  | 7&  | 8*  | 9(  | 0)  |
- * |-----+-----+-----+-----+-----|                      |-----+-----+-----+-----+-----|
- * | `~  |HOME |PGUP |PGDN | END |                      |LEFT |DOWN | UP  |RGHT | ;:  |
- * |-----+-----+-----+-----+-----+                      |-----+-----+-----+-----+-----|
- * |SHFT |     |     |     |     |                      | -_  | =+  | [{  | ]}  |SHF\||
- * `-----'-----'-----'-----'-----'                      `-----'-----'-----'-----'-----'
- *               .-------.-------.-------.      .-------.-------.-------.   
- *               |       |       |       |      |       |(hold) |       |
- *               '-------'-------'-------'      '-------'-------'-------' 
- */
-
+ * ,----------------------------------.                    ,----------------------------------.
+ * |  1!  |  2@  |  3#  |  4$  |  5%  |                    |  6^  |  7&  |  8*  |  9(  |  0)  |
+ * |------+------+------+------+------|                    |------+------+------+------+------|
+ * |  `~  | HOME | PGUP | PGDN |  END |                    | LEFT | DOWN |  UP  | RGHT |  ;:  |
+ * |------+------+------+------+------|  ,----.    ,----.  |------+------+------+------+------|
+ * | SHFT |      |      |  -_  |  =+  |  |MUTE|    | L4 |  |  [{  |  ]}  |      |      |  \|  |
+ * `----------------------------------'  `----'    `----'  `----------------------------------'
+ *      ,----.   ,---------------------------.      ,---------------------------.   ,----.
+ *      |PREV|   |OPT/ESC | CMD/SPC | CTR/TAB|      |CAPS/RET | L1/SPC | L2/BSC |   |NEXT|
+ *      `----'   `---------------------------'      `---------------------------'   `----'
+*/
         symbol_layer {
             display-name = "Symbols Layer";
             bindings = <
-                &kp N1      &kp N2      &kp N3      &kp N4      &kp N5           &kp N6      &kp N7      &kp N8        &kp N9        &kp N0
-                &kp GRAVE   &kp HOME    &kp PG_UP   &kp PG_DN   &kp END          &kp LEFT    &kp DOWN    &kp UP        &kp RIGHT     &kp SEMI
-                &kp LSHFT   &trans      &trans      &trans      &trans           &kp UNDER   &kp MINUS   &kp EQUAL     &kp LBKT      &kp RBKT
-                &kp N1      &mt LALT ESC  &kp LGUI  &mt LCTRL TAB   &kp N2       &kp N3      &kp RET     &lt 1 SPACE   &lt 2 BSPC    &kp N4
+                &kp N1      &kp N2          &kp N3          &kp N4          &kp N5      &kp N6      &kp N7          &kp N8       &kp N9         &kp N0
+                &kp GRAVE   &kp HOME        &kp PG_UP       &kp PG_DN       &kp END     &kp LEFT    &kp DOWN        &kp UP       &kp RIGHT      &kp SEMI
+                &kp LSHFT   &trans          &trans          &kp UNDER       &kp EQUAL   &kp LBKT    &kp RBKT        &trans       &trans         &mt LSHIFT NON_US_BSLH
+                &kp C_PREV  &mt LALT ESC    &mt LGUI SPACE  &mt LCTRL TAB   &kp C_MUTE  &lt 4       &mt CAPS RET    &lt 1 SPACE  &lt 2 BSPC     &kp C_NEXT
             >;
 
-            /* Optional: make the backslash a Shift-tap like in the picture’s \| key */
-            // replace the last key of row 3 with:
-            // &mt LSHFT BSLH
-
             sensor-bindings = <
-                &inc_dec_kp PAGE_DOWN PAGE_UP
+                &inc_dec_kp BSPC DEL
                 &inc_dec_kp C_VOL_DN C_VOL_UP
                 &inc_dec_kp DOWN UP
                 &inc_dec_kp LEFT RIGHT
@@ -78,29 +71,58 @@
         };
 
 /* Layer 2: Function keys
-* ,-----.-----.-----.-----.-----.                      ,-----.-----.-----.-----.-----.
-* | F1  | F2  | F3  | F4  | F5  |                      | F6  | F7  | F8  | F9  | F10 |
-* |-----+-----+-----+-----+-----|                      |-----+-----+-----+-----+-----|
-* | F11 | F12 |PREV |PLAY |NEXT |                      |MUTE |Vol- |Vol+ | Br- | Br+ |
-* |-----+-----+-----+-----+-----+                      |-----+-----+-----+-----+-----|
-* |     |     |     |     |     |                      |     |     |     |     |     |
-* `-----'-----'-----'-----'-----'                      `-----'-----'-----'-----'-----'
-*               .-------.-------.-------.      .-------.-------.-------.   
-*               |       |       |       |      |       |       |(hold) |
-*               '-----------------------'      '-------'-------'-------' 
+ * ,----------------------------------.                    ,----------------------------------.
+ * |  F1  |  F2  |  F3  |  F4  |  F5  |                    |  F6  |  F7  |  F8  |  F9  |  F10 |
+ * |------+------+------+------+------|                    |------+------+------+------+------|
+ * | F11  | F12  |PREV  |PLAY  |NEXT  |                    | Br+  |      |      |      |      |
+ * |------+------+------+------+------|  ,----.    ,----.  |------+------+------+------+------|
+ * |      |      |      |      |      |  |MUTE|    | L4 |  | Br-  |      |      |      |      |
+ * `----------------------------------'  `----'    `----'  `----------------------------------'
+ *      ,----.   ,---------------------------.      ,---------------------------.   ,----.
+ *      |PREV|   |OPT/ESC | CMD/SPC | CTR/TAB|      |CAPS/RET | L1/SPC | L2/BSC |   |NEXT|
+ *      `----'   `---------------------------'      `---------------------------'   `----'
 */
-
         function_layer {
             display-name = "Function Layer";
             bindings = <
-                &kp F1      &kp F2      &kp F3      &kp F4      &kp F5           &kp F6      &kp F7      &kp F8        &kp F9        &kp F10
-                &kp F11     &kp F12     &kp C_PREV  &kp C_PLAY_PAUSE &kp C_NEXT   &kp C_MUTE  &kp C_VOL_DN &kp C_VOL_UP &kp C_BRI_DN  &kp C_BRI_UP
-                &trans      &trans      &trans      &trans      &trans           &trans      &trans      &trans        &trans        &trans
-                &kp N1      &mt LALT ESC  &kp LGUI  &mt LCTRL TAB   &kp N2       &kp N3      &kp RET     &lt 1 SPACE   &lt 2 BSPC    &kp N4
+                &kp F1      &kp F2          &kp F3          &kp F4              &kp F5      &kp F6          &kp F7          &kp F8          &kp F9          &kp F10
+                &kp F11     &kp F12         &kp C_PREV      &kp C_PLAY_PAUSE    &kp C_NEXT  &kp C_BRI_UP    &trans          &trans          &trans          &trans
+                &trans      &trans          &trans          &trans              &trans      &kp C_BRI_DN    &trans          &trans          &trans          &trans
+                &kp C_PREV  &mt LALT ESC    &mt LGUI SPACE  &mt LCTRL TAB       &kp C_MUTE  &lt 4           &mt CAPS RET    &lt 1 SPACE     &lt 2 BSPC      &kp C_NEXT
             >;
 
             sensor-bindings = <
-                &inc_dec_kp PAGE_DOWN PAGE_UP
+                &inc_dec_kp BSPC DEL
+                &inc_dec_kp C_VOL_DN C_VOL_UP
+                &inc_dec_kp DOWN UP
+                &inc_dec_kp LEFT RIGHT
+            >;
+        };
+
+/* CONFIG
+ *
+ * ,----------------------------------.                    ,----------------------------------.
+ * |      |      | BTCLR|      | Reset|                    |  /   |  7   |  8   |  9   |  -   |
+ * |------+------+------+------+------|                    |------+------+------+------+------|
+ * |  BT0 |  BT1 |  BT2 |  BT3 |  BT4 |                    |  =   |  4   |  5   |  6   |  +   |
+ * |------+------+------+------+------|  ,----.    ,----.  |------+------+------+------+------|
+ * |      |      |      |      |      |  |MUTE|    |HOLD|  |  0   |  1   |  2   |  3   |  *   |
+ * `----------------------------------'  `----'    `----'  `----------------------------------'
+ *      ,----.   ,---------------------------.      ,---------------------------.   ,----.
+ *      |PREV|   |OPT/ESC | CMD/SPC | CTR/TAB|      |CAPS/RET | L1/SPC | L2/BSC |   |NEXT|
+ *      `----'   `---------------------------'      `---------------------------'   `----'
+ */
+        config_layer {
+            display-name = "Config Layer";
+            bindings = <
+                &trans          &trans          &bt BT_CLR      &trans          &sys_reset      &kp FSLH    &kp N7          &kp N8          &kp N9      &kp MINUS
+                &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &kp EQUAL   &kp N4          &kp N5          &kp N6      &kp PLUS
+                &trans          &trans          &trans          &trans          &trans          &kp N0      &kp N1          &kp N2          &kp N3      &kp ASTERISK
+                &kp C_PREV      &mt LALT ESC    &mt LGUI SPACE  &mt LCTRL TAB   &kp C_MUTE      &lt 4       &mt CAPS RET    &lt 1 SPACE     &lt 2 BSPC  &kp C_NEXT
+            >;
+
+            sensor-bindings = <
+                &inc_dec_kp BSPC DEL
                 &inc_dec_kp C_VOL_DN C_VOL_UP
                 &inc_dec_kp DOWN UP
                 &inc_dec_kp LEFT RIGHT
